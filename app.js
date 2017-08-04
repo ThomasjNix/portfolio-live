@@ -3,14 +3,16 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 
-app.use('view-engine', 'ejs');
+app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.set(bodyParser.urlencoded({extended: true}));
 
 //RESTful routing setup
 
 // Index (Likely static)
-app.get('/', function(req,res){});
+app.get('/', function(req,res){
+    res.send("Connection successful");
+});
 
 // Biography (Likely static)
 app.get('/biography', function(req,res){});
@@ -32,7 +34,7 @@ app.post('/skills', function(req,res){});
 // Skills page - UPDATE
 app.put('/skills/:id', function(req,res){});
 // Skills page - DESTROY
-app.destroy('/skills/:id', function(req,res){});
+app.delete('/skills/:id', function(req,res){});
 
 // Projects page - INDEX 
 app.get('/projects', function(req,res){});
@@ -47,10 +49,9 @@ app.post('/projects', function(req,res){});
 // Projects page - UPDATE
 app.put('/projects/:id', function(req,res){});
 // Projects page - DESTROY
-app.destroy('/projects/:id', function(req,res){});
+app.delete('/projects/:id', function(req,res){});
 
 app.get('*', function(req,res){
-    res.render('./public/404');
 });
 
 
