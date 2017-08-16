@@ -3,7 +3,7 @@ var router = express.Router();
 
 // Index
 router.get('/', function(req,res){
-    res.render("home");
+    res.render("home", {styleLink: '/assets/css/home.css'});
 });
 
 // Biography
