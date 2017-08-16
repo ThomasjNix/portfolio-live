@@ -1,43 +1,82 @@
 body{
-	color: #090909;
+	color: #001011;
 	font-family: 'Roboto', sans-serif;
-	background-color: #344055;
-}
-div.container#content-container,
-div.container#home-container{
-	padding: 3em 2em;
+	background-image: url('/assets/images/bg-img-test.png');
+	background-size: cover;
 }
 
-#home-container{
-	background-color: #E9F1F7;
-	width: 75%;
-	height: 100%;
-	margin: 0 auto;
-}
-
-#home-container > h2{
-	color: #E9F1F7;
-}
-
-#home-container > h2 > img{
-	border-radius: 15px;
-}
-
-#home-portrait{
-	width: 300px;
-	height: 300px;
-}
-
-#intro-p-container{
-	padding: 10em 2em 1em 2em;
-	margin-top: -10em;
-	font-size: 1.2em;
-	background-color: #2f2f2f;
-	color: #e9f1f7;
-	border-radius: 10px;
-}
 
 /* Overrides */
-.ui.inverted.menu .active.item{
-	background-color: #2274a5;
+
+.button-collapse i{
+	color: #555;
+}
+
+#main-content-container{
+	margin-left: 16.67%;
+	width: 83.33%;
+}
+
+/* Navigation sidebar styling*/
+#slide-out{
+	color: #f7e9e9;
+	overflow: visible;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7cc0f4+0,97ccf4+24,7cc0f4+24,7cc0f4+24,64b5f6+100 */
+	background: #232323; /* Old browsers */
+	background: -moz-linear-gradient(top, #7cc0f4 0%, #97ccf4 24%, #7cc0f4 24%, #7cc0f4 24%, #64b5f6 100%); /* FF3.6-15 */
+	/* background: -webkit-linear-gradient(top, #7cc0f4 0%,#97ccf4 24%,#7cc0f4 24%,#7cc0f4 24%,#64b5f6 100%); */ /* Chrome10-25,Safari5.1-6 */
+	/* background: linear-gradient(to bottom, #7cc0f4 0%,#97ccf4 24%,#7cc0f4 24%,#7cc0f4 24%,#64b5f6 100%); */ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7cc0f4', endColorstr='#64b5f6',GradientType=0 ); /* IE6-9 */
+}
+#slide-out img{
+	width: 90%;
+	padding: 10px;
+	-webkit-box-shadow: 0px 0px 1px 11px rgba(255,255,255,1);
+	-moz-box-shadow: 0px 0px 1px 11px rgba(255,255,255,1);
+	box-shadow: 0px 0px 1px 11px rgb(255, 171, 64);
+	margin-left: 5%;
+}
+#slide-out li{
+	padding-left: 5px;
+	margin-left: 1px;
+}
+#slide-out li.active{
+	border-left: 5px solid #bbdefb;
+	background-color: #1976d2;
+}
+#slide-out li.active a{
+	color: white;
+}
+#slide-out li a{
+	color: #f7e9e9;
+	padding: 0;
+	padding-left: 5px;
+}
+#slide-out li:hover{
+	border-left: 5px solid #bbdefb; 
+	padding-left: 0px;
+}
+#slide-out li:hover a{
+	padding-left: 5;
+	margin-left: 0px;
+}
+header, main, footer {
+	padding-left: 300px;
+}
+
+@media only screen and (max-width : 992px) {
+	header, main, footer {
+	padding-left: 0;
+	}
+}
+
+
+/* Responsive qualities */
+
+/* Under 992px, common modernizer mobile breakpoint */
+@media (max-width: 992px){
+	#main-content-container{
+		margin-left: 5%;
+		width: 90%;
+	}
 }
