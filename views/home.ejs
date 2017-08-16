@@ -1,24 +1,61 @@
+<link rel="stylesheet" type="text/css" href="<%= styleLink %>">
 <% include partials/header %>
 
+ <div class="row">
+ 	<div class="col s12 m8 offset-m2">
+ 		<h2>Thomas Nix - Web Developer at Large!</h2>
+ 		<p>Here is a little information about this page, to learn more about me, check out some of the links on the sidebar.</p>
+ 	</div>
+ </div>
 
-<div class="container" id="home-container">
-<h2 class="ui center aligned icon header">
-  <img class="ui circular icon small" src="/assets/images/portrait.png" id="home-portrait"></img>
-  Thomas Nix
-</h2>
-	<div class="container" id="intro-p-container">
+ <div class="row">
+ 	<div class="col s12 m8 offset-m2">
+ 		<div class="card">
+	 		<div class="card-content">
+		 		<h3 class="card-title">Old vs. New</h3>
+		 		<p>Thanks for visiting, this is my <strong>second</strong> portfolio I have made as a web developer. My first was... well, you can see for yourself below. The next step I plan on taking is integrating Angular4 into my app to make an efficient single-page application.</p>
+		 		<span>Disclaimer: I made this page when I just started learning HTML, CSS, and JS. As this is hosted by UNCC, this page is static.</span>
+		 	</div>
+		 	<div class="card-action">
+		 		<a href="http://webpages.uncc.edu/tnix2/">Link to my <em>first</em> portfolio... don't say I didn't warn you!</a>
+		 	</div>
+	 	</div>
+ 	</div>
 
-	<p>Pabst meggings crucifix, 90's messenger bag brunch knausgaard id mumblecore sustainable tousled affogato. Man braid sartorial austin drinking vinegar, tumblr kitsch vaporware microdosing. Labore 90's gastropub pour-over, authentic locavore irure. Commodo vinyl church-key listicle everyday carry. Man braid taxidermy copper mug lyft bitters. Fixie vinyl hell of in. Lorem ugh in, chia mixtape hella neutra etsy consequat biodiesel tumeric. Freegan cold-pressed salvia hell of, 3 wolf moon brunch forage plaid brooklyn gochujang occaecat eiusmod biodiesel. Chambray dreamcatcher messenger bag you probably haven't heard of them franzen ullamco copper mug meh shaman sustainable keytar ramps vegan yr. Church-key mixtape readymade cray.</p>
 
-	<p>Banjo taiyaki mollit, letterpress shoreditch tumblr scenester listicle kickstarter commodo ethical. Yr four loko palo santo, slow-carb viral ramps chicharrones raclette excepteur cred health goth vaporware bicycle rights esse. Tousled +1 direct trade sunt single-origin coffee. Craft beer fam tacos ethical unicorn next level id. Photo booth slow-carb small batch stumptown. Sunt food truck selfies veniam migas tbh. Chambray kogi activated charcoal, seitan normcore PBR&B craft beer forage edison bulb. Cardigan vape offal DIY microdosing salvia veniam lorem occupy succulents. Tacos irony quis non. Duis before they sold out irure elit pitchfork ea gochujang asymmetrical slow-carb. Ut elit quinoa, deserunt tousled fam ex lyft VHS readymade meditation nulla sint. Helvetica narwhal VHS, hoodie asymmetrical taxidermy crucifix ut keffiyeh tumeric art party kinfolk beard. Twee nisi magna sustainable dolore, shabby chic aliquip. Officia incididunt kombucha aute actually pok pok magna normcore lo-fi umami gluten-free deep v coloring book. Ennui mlkshk you probably haven't heard of them sriracha, minim migas kickstarter irony celiac four loko gentrify.</p>
 
-	<p>Food truck typewriter in crucifix. Magna echo park blue bottle pop-up small batch. Gluten-free cupidatat kombucha, yr cronut hammock aliqua dreamcatcher ea kogi laboris. Twee DIY tbh occaecat literally church-key. Street art kombucha salvia, pour-over sint readymade VHS hashtag chia mollit affogato. Taxidermy godard air plant, banh mi offal ea 3 wolf moon cray thundercats banjo hella iceland nisi master cleanse freegan. Fanny pack brunch lorem ugh put a bird on it flexitarian elit freegan PBR&B. In raw denim pug fugiat selfies. Cloud bread slow-carb yr lo-fi taxidermy heirloom keffiyeh gluten-free ex. Labore vinyl meggings commodo 3 wolf moon in. Actually you probably haven't heard of them bushwick dolore, wolf woke scenester vape meh exercitation shabby chic roof party reprehenderit laborum. PBR&B yr letterpress asymmetrical gentrify selfies ea activated charcoal.
-	Oh. You need a little dummy text for your mockup? How quaint.</p>
+ 	<div class="col s12 m8 offset-m2">
+ 		<div class="card">
+	 		<div class="card-content">
+		 		<h3 class="card-title">Front-end Technologies</h3>
+		 		<p>Here's a list of some of the tech I used on the front end:</p>
+		 		<ul>
+		 			<li>Major 3: HTML5, CSS3, JavaScript</li>
+		 			<li>jQuery</li>
+		 			<li>Google Modernizer (Styling)</li>
+		 			<li>Responsive design</li>
+		 		</ul>
+		 	</div>
+		 </div>
+ 	</div>
 
-	<p>I bet you’re still using Bootstrap too…</p>
 
-	</div>
+ 	<div class="col s12 m8 offset-m2">
+ 		<div class="card">
+	 		<div class="card-content">
+		 		<h3 class="card-title">Back-end Technologies</h3>
+		 		<p>I am excited to say that this version of my portfolio utilizes (nearly) a full web stack! Here are some of the back-end technologies I used in this project, and how I used them:</p>
+		 		<ul>
+		 			<li>NodeJS + ExpressJS: Building a server, routing paths, loading assets, and creating RESTful routes</li>
+		 			<li>MongoDB + MongooseJS: Loading skills and projects from a database (mLab) using CRUD operations</li>
+		 			<li>EJS: Loading in the skills and projects dynamically</li>
+		 			<li>PassportJS: Setting up an admin route with authentication so I can add skills and projects to my portfolio from the web</li>
+		 		</ul>
+		 	</div>
+		 </div>
+ 	</div>
+ </div>
 
-</div>
+ 
 
 <% include partials/footer %>

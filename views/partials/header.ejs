@@ -3,7 +3,6 @@
     <head>
         <meta charset="utf-8">
         <title>Thomas Nix</title>
-		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.css">
 		<link rel="stylesheet" type="text/css" href="/assets/css/layout.css">
 		<script
 		  src="https://code.jquery.com/jquery-3.1.1.min.js"
@@ -11,29 +10,35 @@
 		  crossorigin="anonymous">
 		</script>
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		  <!-- Compiled and minified CSS -->
+  		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+
+		<!-- Compiled and minified JavaScript -->
+	  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+	  	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body>
-
-	<div class="ui menu fixed inverted big">
-		<a class="item active" href="/">
-			Home
-		</a>
-		<a class="item" href="/biography">
-			Biography
-		</a>
-		<a class="item" href="/contact">
-			Contact
-		</a>
-		<div class="right menu">
-			<a class="ui item" href="/skills">
-				Skills
-			</a>
-			<a class="ui item" href="/projects">
-				Projects
-			</a>
-		</div>
-	</div>
-
-	<div class="container" id="content-container">
         
-        
+
+ 	<ul id="slide-out" class="side-nav fixed z-depth-2">
+	  <img class="circle responsive-img" src="/assets/images/portrait.png">
+      <li><a href="/">Home</a></li>
+      <li><a href="/biography">Biography</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/skills">Skills</a></li>
+      <li><a href="/projects">Projects</a></li>
+    </ul>
+
+    <a href="#" data-activates="slide-out" class="button-collapse">
+    	 <i class="material-icons small">list</i>
+    </a>
+    	
+    <div id="main-content-container">
+
+
+
+
+
+
+   
+			
