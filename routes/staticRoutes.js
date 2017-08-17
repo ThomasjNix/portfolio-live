@@ -8,12 +8,12 @@ router.get('/', function(req,res){
 
 // Biography
 router.get('/biography', function(req,res){
-	res.render("biography");
+	res.render("biography", {styleLink: '/assets/css/biography.css'});
 });
 
 // Contact page
 router.get('/contact', function(req,res){
-	res.render("contact");
+	res.render("contact", {styleLink: '/assets/css/contact.css'});
 });
 
 module.exports = router;
