@@ -1,3 +1,66 @@
 <% include ../partials/header %>
+ <div class="row">
+ 	<div class="col s12 m8 offset-m2">
+ 		<h2 class="page-header">Skills</h2>
+ 		<p class="col s12 m6 offset-m3 page-header-description">Listed here are my development skills, which are dynamically loaded from a database and rendered with EJS.</p>
+ 	</div>
+ </div>
 
+ <div class="row">
+ 	<div class="col s12 m8 offset-m2">
+	   <div class="card">
+	    <div class="card-content">
+	      <p id="skills-card-content"><%= skillsCardInfo.front %></p>
+	    </div>
+	    <div class="card-tabs">
+	      <ul class="tabs tabs-fixed-width">
+	        <li class="tab"><a clas="active" href="#front-end-div" onclick="changeCardContent('<%= skillsCardInfo.front %>')">Front End</a></li>
+	        <li class="tab"><a href="#back-end-div" onclick="changeCardContent('<%= skillsCardInfo.back %>')">Back End</a></li>
+	        <li class="tab"><a href="#other-div" onclick="changeCardContent('<%= skillsCardInfo.other %>')">Other</a></li>
+	      </ul>
+	    </div>
+	    <div class="card-content grey lighten-4">
+		      <div id="front-end-div">
+		      	<ul class="collection">
+					<% for (var i = 0; i < 5; i++) { %>
+					    <li class="collection-item avatar">
+					      <img src="assets/images/placeholder50.png" alt="" class="circle">
+					      <span class="title">Title: <%= i %></span>
+					      <p>Text Content: <%= i %></p>
+					    </li>
+				    <% } %>
+				</ul>
+		      </div>
+
+		      <div id="back-end-div">
+		      	<ul class="collection">
+		      		<% for (var i = 6; i < 10; i++) { %>
+					    <li class="collection-item avatar">
+					      <img src="assets/images/placeholder50.png" alt="" class="circle">
+					      <span class="title">Title: <%= i %></span>
+					      <p>Text Content: <%= i %></p>
+					     
+					    </li>
+				    <% } %>
+	  			</ul>
+		      </div>
+
+		      <div id="other-div">
+		      	<ul class="collection">
+					<% for (var i = 11; i < 15; i++) { %>
+					    <li class="collection-item avatar">
+					      <img src="assets/images/placeholder50.png" alt="" class="circle">
+					      <span class="title">Title: <%= i %></span>
+					      <p>Text Content: <%= i %></p>
+					     
+					    </li>
+				    <% } %>
+				</ul>
+		      </div>
+	    </div>
+	  </div>
+	</div>
+</div>
+
+<script src="assets/js/skills.js"></script>
 <% include ../partials/footer %>
