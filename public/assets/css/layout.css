@@ -3,24 +3,61 @@ body{
 	font-family: 'Roboto', sans-serif;
 	background-image: url('/assets/images/bg-img-test.png');
 	background-size: cover;
+	background-attachment: fixed;
+}
+
+.card-content > p,
+.card-content > span,
+.card-content > ul{
+	padding-left: 5% !important;
+}
+.page-header{
+	font-family: "Montserrat", verdana;
+	font-weight: bold;
+	color: #232323;
+	text-shadow: 3px 2px 0px #fff, 6px 4px 0px rgba(0,0,0,0.15);
+}
+
+.page-header,
+.page-header-description{
+	text-align: center;
+}
+
+.page-header-description{
+	font-size: 14px;
+	font-style: italic;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 5px;
+    color: white;
 }
 
 
-/* Overrides */
 
+/* Overrides */
+header, main, footer {
+	padding-left: 300px;
+}
 .button-collapse i{
 	color: #555;
 }
 
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating){
+	font-weight: bold;
+}
+
 #main-content-container{
-	margin-left: 16.67%;
-	width: 83.33%;
+	margin-left: 15%;
+	width: 85%;
+	padding: 0 0.5%;
 }
 
 /* Navigation sidebar styling*/
 #slide-out{
 	color: #f7e9e9;
 	overflow: visible;
+	width: 15%;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7cc0f4+0,97ccf4+24,7cc0f4+24,7cc0f4+24,64b5f6+100 */
 	background: #232323; /* Old browsers */
 	background: -moz-linear-gradient(top, #7cc0f4 0%, #97ccf4 24%, #7cc0f4 24%, #7cc0f4 24%, #64b5f6 100%); /* FF3.6-15 */
@@ -60,21 +97,18 @@ body{
 	padding-left: 5;
 	margin-left: 0px;
 }
-header, main, footer {
-	padding-left: 300px;
-}
-
 @media only screen and (max-width : 992px) {
 	header, main, footer {
 	padding-left: 0;
 	}
 }
-
-
 /* Responsive qualities */
 
 /* Under 992px, common modernizer mobile breakpoint */
 @media (max-width: 992px){
+	#slide-out{
+		width: 60vw;
+	}
 	#main-content-container{
 		margin-left: 5%;
 		width: 90%;
