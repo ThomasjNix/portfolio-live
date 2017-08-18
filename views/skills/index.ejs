@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="<%= styleLink %>">
 <% include ../partials/header %>
  <div class="row">
  	<div class="col s12 m8 offset-m2">
@@ -14,15 +15,15 @@
 	    </div>
 	    <div class="card-tabs">
 	      <ul class="tabs tabs-fixed-width">
-	        <li class="tab"><a clas="active" href="#front-end-div" onclick="changeCardContent('<%= skillsCardInfo.front %>')">Front End</a></li>
-	        <li class="tab"><a href="#back-end-div" onclick="changeCardContent('<%= skillsCardInfo.back %>')">Back End</a></li>
-	        <li class="tab"><a href="#other-div" onclick="changeCardContent('<%= skillsCardInfo.other %>')">Other</a></li>
+	        <li class="tab"><a clas="active" href="#front-end-div" onclick="changeCardContent(window.location.pathname.substr(1),'<%= skillsCardInfo.front %>')">Front End</a></li>
+	        <li class="tab"><a href="#back-end-div" onclick="changeCardContent(window.location.pathname.substr(1), '<%= skillsCardInfo.back %>')">Back End</a></li>
+	        <li class="tab"><a href="#other-div" onclick="changeCardContent(window.location.pathname.substr(1), '<%= skillsCardInfo.other %>')">Other</a></li>
 	      </ul>
 	    </div>
 	    <div class="card-content grey lighten-4">
 		      <div id="front-end-div">
 		      	<ul class="collection">
-					<% for (var i = 0; i < 5; i++) { %>
+					<% for (var i = 0; i < 15; i++) { %>
 					    <li class="collection-item avatar">
 					      <img src="assets/images/placeholder50.png" alt="" class="circle">
 					      <span class="title">Title: <%= i %></span>
@@ -62,5 +63,5 @@
 	</div>
 </div>
 
-<script src="assets/js/skills.js"></script>
+<script src="assets/js/projects-and-skills.js"></script>
 <% include ../partials/footer %>

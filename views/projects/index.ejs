@@ -1,3 +1,52 @@
+<link rel="stylesheet" type="text/css" href="<%= styleLink %>">
 <% include ../partials/header %>
+ <div class="row">
+ 	<div class="col s12 m8 offset-m2">
+ 		<h2 class="page-header">Projects</h2>
+ 		<p class="col s12 m6 offset-m3 page-header-description">Listed here are projects I have worked on, which are dynamically loaded from a database and rendered with EJS.</p>
+ 	</div>
+ </div>
 
+ <div class="row">
+ 	<div class="col s12 m8 offset-m2">
+	   <div class="card">
+	    <div class="card-content">
+	      <p id="projects-card-content">These are projects that I have worked on alone, and include some experiences from places I have worked.</p>
+	    </div>
+	    <div class="card-tabs">
+	      <ul class="tabs tabs-fixed-width">
+	        <li class="tab"><a class="active" href="#my-projects" onclick="changeCardContent(window.location.pathname.substr(1), '<%= projectsCardInfo.my_projects %>')">My Projects</a></li>
+	        <li class="tab"><a href="#collab-projects" onclick="changeCardContent(window.location.pathname.substr(1), '<%= projectsCardInfo.collab %>')">Collaborative Projects</a></li>
+	      </ul>
+	    </div>
+	    <div class="card-content grey lighten-4">
+	      <div id="my-projects">
+			<ul class="collection">
+				<% for (var i = 0; i < 15; i++) { %>
+					<li class="collection-item avatar">
+						<img src="assets/images/placeholder50.png" alt="" class="circle">
+						<span class="title">Title: <%= i %></span>
+						<p>Text Content: <%= i %></p>
+					</li>
+				<% } %>
+			</ul>
+	      	
+	      </div>
+
+	      <div id="collab-projects">
+	      	<ul class="collection">
+				<% for (var i = 6; i < 10; i++) { %>
+					<li class="collection-item avatar">
+						<img src="assets/images/placeholder50.png" alt="" class="circle">
+						<span class="title">Title: <%= i %></span>
+						<p>Text Content: <%= i %></p>
+					</li>
+				<% } %>
+			</ul>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+</div>
+<script src="assets/js/projects-and-skills.js"></script>
 <% include ../partials/footer %>
