@@ -4,13 +4,12 @@ var express = require('express'),
  	app = express(),
  	path = require('path'),
  	staticRoutes = require('./routes/staticRoutes'),
- 	skillsRoutes = require('./routes/skills'),
- 	projectRoutes = require('./routes/projects'),
+ 	adminRoutes = require('./routes/admin'),
  	mongoose = require('mongoose');
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
-app.set(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({extended: true}));
 
 
 // Database 
@@ -18,8 +17,7 @@ mongoose.connect('mongodb://localhost/portfolio');
 
 //RESTful routing setup
 app.use(staticRoutes);
-app.use('/skills',skillsRoutes);
-app.use('/projects',projectRoutes);
+app.use('/admin',adminRoutes);
 app.use(function(req,res,next){
 	res.locals.routeInfo = {
 		query: req.query,
@@ -27,8 +25,7 @@ app.use(function(req,res,next){
 	}
 });
 app.get('*', function(req,res){
-	res.render("home");
-	next();
+	res.redirect("home");
 });
 
 // server start
