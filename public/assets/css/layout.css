@@ -18,6 +18,12 @@ body{
 .card-content > ul{
 	padding-left: 5% !important;
 }
+.flash-message{
+    margin-left: 15%;
+    font-family: Roboto, verdana;
+    font-size: 1.2em;
+    opacity: 0.8;
+}
 .page-header{
 	font-family: "Montserrat", verdana;
 	font-weight: bold;

@@ -23,6 +23,7 @@ router.get('/skills', function(req,res){
 	Skill.find({}, function(err, skillList){
 		if (err){
 			console.log(err);
+			req.flash("err", "Unable to perform action at this time.");
 			res.redirect('/');
 		}else{
 			res.render('skills/index', {
@@ -43,6 +44,7 @@ router.get('/projects', function(req,res){
 	Project.find({}, function(err, projectList){
 		if (err){
 			console.log(err);
+			req.flash("err", "Unable to perform action at this time.");
 			res.redirect('/');
 		}else{
 			res.render('projects/index', {

@@ -2,6 +2,7 @@ node_modules/
 package.json
 semantic.json
 semantic/
+data/
 *.png
 *.jpg
 *.jpeg

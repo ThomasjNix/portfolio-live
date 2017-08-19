@@ -6,6 +6,7 @@ var express = require('express'),
  	methodOverride = require('method-override'),
  	passport = require('passport'),
  	LocalStrategy = require('passport-local'),
+ 	flash = require('connect-flash'),
  	path = require('path'),
  	staticRoutes = require('./routes/staticRoutes'),
  	adminRoutes = require('./routes/admin'),
@@ -26,6 +27,7 @@ app.use(require('express-session')({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
@@ -35,6 +37,8 @@ app.use(function(req,res,next){
 		query: req.query,
 		origUrl: req.originalUrl
 	};
+	res.locals.error = req.flash("error");
+	res.locals.success = req.flash("success");
 	next();
 });
 

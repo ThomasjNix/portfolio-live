@@ -8,11 +8,13 @@ router.get('/', authenticateAdmin, function(req,res){
 	Skill.find({}, function(err, skills){
 		if (err){
 			console.log(err);
+			req.flash("err", "Unable to perform action at this time.");
 			res.redirect('/');
 		}else{
 			Project.find({}, function(err, projects){
 				if (err){
 					console.log(err);
+					req.flash("err", "Unable to perform action at this time.");
 					res.redirect('/');
 				}else{
 					res.render('admin/index', {
@@ -36,6 +38,7 @@ router.get('/skills/:id/edit', authenticateAdmin, function(req,res){
 	Skill.findById(req.params.id, function(err, skillFound){
 		if (err){
 			console.log(err);
+			req.flash("err", "Unable to perform action at this time.");
 			res.redirect('/admin');
 		}else{
 			res.render('admin/skills/edit', {skill : skillFound});
@@ -47,10 +50,11 @@ router.post('/skills', authenticateAdmin, function(req,res){
 	Skill.create(req.body.skill, function(err, skillCreated){
 		if (err){
 			console.log(err);
+			req.flash("err", "Unable to perform action at this time.");
 			res.redirect('/admin');
 		}else{
 			skillCreated.save();
-			console.log("successfully added skill:\n"+skillCreated);
+			req.flash("success", "Created Skill successfully.");
 			res.redirect('/admin');
 		}
 	});
@@ -60,9 +64,10 @@ router.put('/skills/:id', authenticateAdmin, function(req,res){
 	Skill.findByIdAndUpdate(req.params.id, req.body.skill, function(err, skill){
 		if (err){
 			console.log(err);
+			req.flash("err", "Unable to perform action at this time.");
 			res.redirect('/admin');
 		}else{
-			console.log("Successfully updated Skill:\n"+skill);
+			req.flash("success", "Updated Skill successfully.");
 			res.redirect('/admin');
 		}
 	});
@@ -72,9 +77,10 @@ router.delete('/skills/:id', authenticateAdmin, function(req,res){
 	Skill.findByIdAndRemove(req.params.id, function(err){
 		if (err){
 			console.log(err);
+			req.flash("err", "Unable to perform action at this time.");
 			res.redirect('/admin');
 		}else{
-			console.log("Successfully removed Skill");
+			req.flash("success", "Removed Skill successfully.");
 			res.redirect('/admin');
 		}
 	})
@@ -89,6 +95,7 @@ router.get('/projects/:id/edit', function(req,res){
 	Project.findById(req.params.id, function(err, projectFound){
 		if (err){
 			console.log(err);
+			req.flash("err", "Unable to perform action at this time.");
 			res.redirect('/admin');
 		}else{
 			res.render('admin/projects/edit', {project : projectFound});
@@ -101,10 +108,11 @@ router.post('/projects', authenticateAdmin, function(req,res){
 		console.log(req.body);
 		if (err){
 			console.log(err);
+			req.flash("err", "Unable to perform action at this time.");
 			res.redirect('/admin');
 		}else{
 			projectCreated.save();
-			console.log("successfully added project:\n"+projectCreated);
+			req.flash("success", "Created Project successfully.");
 			res.redirect('/admin');
 		}
 	});
@@ -114,9 +122,10 @@ router.put('/projects/:id', authenticateAdmin, function(req,res){
 	Project.findByIdAndUpdate(req.params.id, req.body.project, function(err, project){
 		if (err){
 			console.log(err);
+			req.flash("err", "Unable to perform action at this time.");
 			res.redirect('/admin');
 		}else{
-			console.log("Successfully updated Project:\n"+project);
+			req.flash("success", "Updated Project successfully.");
 			res.redirect('/admin');
 		}
 	});
@@ -126,9 +135,10 @@ router.delete('/projects/:id', authenticateAdmin, function(req,res){
 	Project.findByIdAndRemove(req.params.id, function(err){
 		if (err){
 			console.log(err);
+			req.flash("err", "Unable to perform action at this time.");
 			res.redirect('/admin');
 		}else{
-			console.log("Successfully removed Project");
+			req.flash("success", "Removed Project successfully.");
 			res.redirect('/admin');
 		}
 	})
@@ -147,6 +157,7 @@ router.post('/login', passport.authenticate("local", {
 
 router.get('/logout', function(req,res){
 	req.logout();
+	req.flash("success", "Successfully signed out.");
 	res.redirect('/');
 });
 
@@ -155,6 +166,7 @@ function authenticateAdmin(req,res,next){
 	if (req.isAuthenticated()){
 		return next();
 	}
+	req.flash("error", "Unable to continue: Insufficient priveledges. Please sign in as an administrator.");
 	res.redirect('/admin/login');
 };
 
