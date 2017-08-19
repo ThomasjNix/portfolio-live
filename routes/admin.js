@@ -1,9 +1,10 @@
 var express = require('express'),
 	router = express.Router(),
 	Skill = require('../models/skill'),
-	Project = require('../models/project');
+	Project = require('../models/project'),
+	passport = require('passport');
 
-router.get('/', function(req,res){
+router.get('/', authenticateAdmin, function(req,res){
 	Skill.find({}, function(err, skills){
 		if (err){
 			console.log(err);
@@ -27,11 +28,11 @@ router.get('/', function(req,res){
 })
 
 // Admin Skills page - NEW
-router.get('/skills/new', function(req,res){
+router.get('/skills/new', authenticateAdmin, function(req,res){
 	res.render('admin/skills/new')
 });
 // Admin Skills page - EDIT
-router.get('/skills/:id/edit', function(req,res){
+router.get('/skills/:id/edit', authenticateAdmin, function(req,res){
 	Skill.findById(req.params.id, function(err, skillFound){
 		if (err){
 			console.log(err);
@@ -42,7 +43,7 @@ router.get('/skills/:id/edit', function(req,res){
 	});
 });
 // Admin Skills page - CREATE
-router.post('/skills', function(req,res){
+router.post('/skills', authenticateAdmin, function(req,res){
 	Skill.create(req.body.skill, function(err, skillCreated){
 		if (err){
 			console.log(err);
@@ -55,7 +56,7 @@ router.post('/skills', function(req,res){
 	});
 });
 // Admin Skills page - UPDATE
-router.put('/skills/:id', function(req,res){
+router.put('/skills/:id', authenticateAdmin, function(req,res){
 	Skill.findByIdAndUpdate(req.params.id, req.body.skill, function(err, skill){
 		if (err){
 			console.log(err);
@@ -67,7 +68,7 @@ router.put('/skills/:id', function(req,res){
 	});
 });
 // Admin Skills page - DESTROY
-router.delete('/skills/:id', function(req,res){
+router.delete('/skills/:id', authenticateAdmin, function(req,res){
 	Skill.findByIdAndRemove(req.params.id, function(err){
 		if (err){
 			console.log(err);
@@ -80,7 +81,7 @@ router.delete('/skills/:id', function(req,res){
 });
 
 // Admin Projects page - NEW
-router.get('/projects/new', function(req,res){
+router.get('/projects/new', authenticateAdmin, function(req,res){
 	res.render('admin/projects/new')
 });
 // Admin Projects page - EDIT
@@ -95,7 +96,7 @@ router.get('/projects/:id/edit', function(req,res){
 	});
 });
 // Admin Projects page - CREATE
-router.post('/projects', function(req,res){
+router.post('/projects', authenticateAdmin, function(req,res){
 	Project.create(req.body.project, function(err, projectCreated){
 		console.log(req.body);
 		if (err){
@@ -109,7 +110,7 @@ router.post('/projects', function(req,res){
 	});
 });
 // Admin Projects page - UPDATE
-router.put('/projects/:id', function(req,res){
+router.put('/projects/:id', authenticateAdmin, function(req,res){
 	Project.findByIdAndUpdate(req.params.id, req.body.project, function(err, project){
 		if (err){
 			console.log(err);
@@ -121,7 +122,7 @@ router.put('/projects/:id', function(req,res){
 	});
 });
 // Admin Projects page - DESTROY
-router.delete('/projects/:id', function(req,res){
+router.delete('/projects/:id', authenticateAdmin, function(req,res){
 	Project.findByIdAndRemove(req.params.id, function(err){
 		if (err){
 			console.log(err);
@@ -132,5 +133,29 @@ router.delete('/projects/:id', function(req,res){
 		}
 	})
 });
+
+
+
+router.get('/login', function(req,res){
+	res.render('admin/login');
+});
+
+router.post('/login', passport.authenticate("local", {
+	successRedirect: '/admin',
+	failureRedirect: '/admin/login'
+}), function(req,res){});
+
+router.get('/logout', function(req,res){
+	req.logout();
+	res.redirect('/');
+});
+
+
+function authenticateAdmin(req,res,next){
+	if (req.isAuthenticated()){
+		return next();
+	}
+	res.redirect('/admin/login');
+};
 
 module.exports = router;
