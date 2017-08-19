@@ -32,7 +32,14 @@ router.get('/skills/new', function(req,res){
 });
 // Admin Skills page - EDIT
 router.get('/skills/:id/edit', function(req,res){
-	
+	Skill.findById(req.params.id, function(err, skillFound){
+		if (err){
+			console.log(err);
+			res.redirect('/admin');
+		}else{
+			res.render('admin/skills/edit', {skill : skillFound});
+		}
+	});
 });
 // Admin Skills page - CREATE
 router.post('/skills', function(req,res){
@@ -48,9 +55,29 @@ router.post('/skills', function(req,res){
 	});
 });
 // Admin Skills page - UPDATE
-router.put('/skills/:id', function(req,res){});
+router.put('/skills/:id', function(req,res){
+	Skill.findByIdAndUpdate(req.params.id, req.body.skill, function(err, skill){
+		if (err){
+			console.log(err);
+			res.redirect('/admin');
+		}else{
+			console.log("Successfully updated Skill:\n"+skill);
+			res.redirect('/admin');
+		}
+	});
+});
 // Admin Skills page - DESTROY
-router.delete('/skills/:id', function(req,res){});
+router.delete('/skills/:id', function(req,res){
+	Skill.findByIdAndRemove(req.params.id, function(err){
+		if (err){
+			console.log(err);
+			res.redirect('/admin');
+		}else{
+			console.log("Successfully removed Skill");
+			res.redirect('/admin');
+		}
+	})
+});
 
 // Admin Projects page - NEW
 router.get('/projects/new', function(req,res){
@@ -58,7 +85,14 @@ router.get('/projects/new', function(req,res){
 });
 // Admin Projects page - EDIT
 router.get('/projects/:id/edit', function(req,res){
-	res.render('admin/projects/edit/'+req.params.id);
+	Project.findById(req.params.id, function(err, projectFound){
+		if (err){
+			console.log(err);
+			res.redirect('/admin');
+		}else{
+			res.render('admin/projects/edit', {project : projectFound});
+		}
+	});
 });
 // Admin Projects page - CREATE
 router.post('/projects', function(req,res){
@@ -75,8 +109,28 @@ router.post('/projects', function(req,res){
 	});
 });
 // Admin Projects page - UPDATE
-router.put('/projects/:id', function(req,res){});
+router.put('/projects/:id', function(req,res){
+	Project.findByIdAndUpdate(req.params.id, req.body.project, function(err, project){
+		if (err){
+			console.log(err);
+			res.redirect('/admin');
+		}else{
+			console.log("Successfully updated Project:\n"+project);
+			res.redirect('/admin');
+		}
+	});
+});
 // Admin Projects page - DESTROY
-router.delete('/projects/:id', function(req,res){});
+router.delete('/projects/:id', function(req,res){
+	Project.findByIdAndRemove(req.params.id, function(err){
+		if (err){
+			console.log(err);
+			res.redirect('/admin');
+		}else{
+			console.log("Successfully removed Project");
+			res.redirect('/admin');
+		}
+	})
+});
 
 module.exports = router;

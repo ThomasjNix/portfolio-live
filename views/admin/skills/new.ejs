@@ -11,6 +11,18 @@
           <input id="skill_imgUrl" type="text" class="validate" name="skill[skillImageUrl]">
           <label for="skill_imgUrl">Skill Image URL</label>
         </div>
+        <p>
+            <input class="with-gap" name="skill[skillType]" type="radio" id="1" checked="checked" value="1"/>
+            <label for="1">Front End</label>
+          </p>
+          <p>
+            <input class="with-gap" name="skill[skillType]" type="radio" id="2" value="2" />
+            <label for="2">Back End</label>
+          </p>
+          <p>
+            <input class="with-gap" name="skill[skillType]" type="radio" id="3" value="3"/>
+            <label for="3">Other</label>
+          </p>
         <div class="input-field col s12">
           <textarea id="skill_description" class="materialize-textarea" name="skill[skillDescription]"></textarea>
           <label for="skill_description">Description</label>
@@ -19,8 +31,7 @@
        	<button class="btn waves-effect waves-light" type="submit" name="action">Submit
 	 		<i class="material-icons right">send</i>
 		</button>
-      </div>
-     
+      </div>     
     </form>
   </div>
 

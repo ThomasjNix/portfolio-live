@@ -4,13 +4,23 @@
     <form class="col s10 offset-s1" id="admin-form" action="/admin/projects" method="POST">
       <div class="row">
         <div class="input-field col s12">
-          <input id="project_name" type="text" class="validate" name="project[projectName]">
+          <input id="project_name" type="text" class="validate" name="project[projectName]" required>
           <label for="project_name">Project Name</label>
         </div>
         <div class="input-field col s12">
           <input id="project_imgUrl" type="text" class="validate" name="project[projectImageUrl]">
           <label for="project_imgUrl">Project Image URL</label>
         </div>
+ 
+          <p>
+            <input class="with-gap" name="project[projectType]" type="radio" id="Individual" checked="checked" %>/>
+            <label for="Individual">Individual</label>
+          </p>
+          <p>
+            <input class="with-gap" name="project[projectType]" type="radio" id="Collaborative" />
+            <label for="Collaborative">Collaborative</label>
+          </p>
+    
         <div class="input-field col s12">
           <textarea id="project_description" class="materialize-textarea" name="project[projectDescription]"></textarea>
           <label for="project_description">Description</label>

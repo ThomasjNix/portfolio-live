@@ -22,26 +22,34 @@
 	    <div class="card-content grey lighten-4">
 	      <div id="my-projects">
 			<ul class="collection">
-				<% for (var i = 0; i < 15; i++) { %>
-					<li class="collection-item avatar">
-						<img src="assets/images/placeholder50.png" alt="" class="circle">
-						<span class="title">Title: <%= i %></span>
-						<p>Text Content: <%= i %></p>
-					</li>
-				<% } %>
+				<% if (typeof projects !== 'undefined') { %>
+						<% projects.forEach(function(projectItem){ %>
+							<% if (projectItem.projectType === "1"){ %>
+							    <li class="collection-item avatar">
+							      <img src="<%= projectItem.projectImageUrl %>" alt="" class="circle">
+							      <span class="title"><%= projectItem.projectName %></span>
+							      <p><%= projectItem.projectDescription %></p>
+							    </li>
+						     <% } %>
+					    <% }) %>
+				    <% } %>
 			</ul>
 	      	
 	      </div>
 
 	      <div id="collab-projects">
 	      	<ul class="collection">
-				<% for (var i = 6; i < 10; i++) { %>
-					<li class="collection-item avatar">
-						<img src="assets/images/placeholder50.png" alt="" class="circle">
-						<span class="title">Title: <%= i %></span>
-						<p>Text Content: <%= i %></p>
-					</li>
-				<% } %>
+					<% if (typeof projects !== 'undefined') { %>
+						<% projects.forEach(function(projectItem){ %>
+							<% if (projectItem.projectType === "2"){ %>
+							    <li class="collection-item avatar">
+							      <img src="<%= projectItem.projectImageUrl %>" alt="" class="circle">
+							      <span class="title"><%= projectItem.projectName %></span>
+							      <p><%= projectItem.projectDescription %></p>
+							    </li>
+						     <% } %>
+					    <% }) %>
+				    <% } %>
 			</ul>
 	      </div>
 	    </div>

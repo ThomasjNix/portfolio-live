@@ -1,5 +1,7 @@
-var express = require('express');
-var router = express.Router();
+var express = require('express'),
+	router = express.Router(),
+	Skill = require('../models/skill'),
+	Project = require('../models/project');
 
 // Index
 router.get('/', function(req,res){
@@ -18,27 +20,42 @@ router.get('/contact', function(req,res){
 
 // Skills page - INDEX
 router.get('/skills', function(req,res){
-	res.render("skills/index",
-		{
-			styleLink: '/assets/css/skills.css',
-			skillsCardInfo: {
-				front: "Front end skills are those that influence how a web page works on the client side. This includes HTML, CSS, and JavaScript, as well as libraries or frameworks for each.",
-				back: "Back end skills are those that change how a client interacts with a server, and how data is processed and sent back to the client. This includes routing, database interaction, authentication, etc.",
-				other: "Other skills are those that either don\\'t fit neatly into either front or back end skills, but are still important. Examples are workflow, design structure, team coordination, etc."
-			}
-		});
+	Skill.find({}, function(err, skillList){
+		if (err){
+			console.log(err);
+			res.redirect('/');
+		}else{
+			res.render('skills/index', {
+				skills: skillList,
+				skillsCardInfo: {
+					front: "Front end skills are those that influence how a web page works on the client side. This includes HTML, CSS, and JavaScript, as well as libraries or frameworks for each.",
+					back: "Back end skills are those that change how a client interacts with a server, and how data is processed and sent back to the client. This includes routing, database interaction, authentication, etc.",
+					other: "Other skills are those that either don\\'t fit neatly into either front or back end skills, but are still important. Examples are workflow, design structure, team coordination, etc."
+				},
+				styleLink: '/assets/css/skills.css'
+			});
+		}
+	});
 });
 
 // Projects page - INDEX 
 router.get('/projects', function(req,res){
-	res.render("projects/index",
-		{
-			styleLink: '/assets/css/projects.css',
-			projectsCardInfo: {
-				my_projects: "These are projects that I have worked on alone, and include some experiences from places I have worked.",
-				collab: "These are projects I have worked on with peers."
-			}
-		});
+	Project.find({}, function(err, projectList){
+		if (err){
+			console.log(err);
+			res.redirect('/');
+		}else{
+			res.render('projects/index', {
+				projects: projectList,
+				projectsCardInfo: {
+					my_projects: "These are projects that I have worked on alone, and include some experiences from places I have worked.",
+					collab: "These are projects I have worked on with peers."
+				},
+				styleLink: '/assets/css/projects.css'
+			})
+		}
+	});
 });
+
 
 module.exports = router;

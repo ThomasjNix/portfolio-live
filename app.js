@@ -5,11 +5,13 @@ var express = require('express'),
  	path = require('path'),
  	staticRoutes = require('./routes/staticRoutes'),
  	adminRoutes = require('./routes/admin'),
- 	mongoose = require('mongoose');
+ 	mongoose = require('mongoose'),
+ 	methodOverride = require('method-override');
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(methodOverride("_method"));
 
 
 // Database 

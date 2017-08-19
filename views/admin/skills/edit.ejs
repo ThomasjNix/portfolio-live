@@ -1,18 +1,30 @@
 <% include ../../partials/header %>
 
  <div class="row">
-    <form class="col s10 offset-s1" id="admin-form" action="/admin/skills?_method=PUT" method="POST">
+    <form class="col s10 offset-s1" id="admin-form" action="/admin/skills/<%= skill._id %>?_method=PUT" method="POST">
       <div class="row">
         <div class="input-field col s12">
-          <input id="skill_name" type="text" class="validate" name="skill[name]" placeholder="skill[skillName]">
+          <input id="skill_name" type="text" class="validate" name="skill[skillName]" value="<%= skill.skillName %>">
           <label for="skill_name">Skill Name</label>
         </div>
         <div class="input-field col s12">
-          <input id="skill_imgUrl" type="text" class="validate" name="skill[imageUrl]" placeholder="skill[skillImage]">
+          <input id="skill_imgUrl" type="text" class="validate" name="skill[skillImageUrl]" value="<%= skill.skillImageUrl %>">
           <label for="skill_imgUrl">Skill Image URL</label>
         </div>
+          <p>
+            <input class="with-gap" name="skill[skillType]" type="radio" id="1" required value="1"/>
+            <label for="1">Front End</label>
+          </p>
+          <p>
+            <input class="with-gap" name="skill[skillType]" type="radio" id="2" required value="2"/>
+            <label for="2">Back End</label>
+          </p>
+          <p>
+            <input class="with-gap" name="skill[skillType]" type="radio" id="3" required value="3"/>
+            <label for="3">Other</label>
+          </p>
         <div class="input-field col s12">
-          <textarea id="skill_description" class="materialize-textarea" name="skill[description]" value="skill[skillDescription]"></textarea>
+          <textarea id="skill_description" class="materialize-textarea" name="skill[skillDescription]" %>"><%= skill.skillDescription %></textarea>
           <label for="skill_description">Description</label>
         </div>
 
