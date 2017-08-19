@@ -2,3 +2,6 @@
 	max-height: 50vh;
 	overflow-y: scroll;
 }
+@media (max-width: 992px){
+
+}

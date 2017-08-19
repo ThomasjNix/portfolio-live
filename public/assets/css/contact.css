@@ -1,8 +1,9 @@
-.card .card-stacked h4{    
+.card .card-stacked h4{
     color: #232323;
     max-width: 100%;
     width: 100%;
     margin: 0;
     font-weight: bold;
     padding: 15px;
+    margin-left: 5%;
 }

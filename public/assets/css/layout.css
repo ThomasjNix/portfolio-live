@@ -6,6 +6,13 @@ body{
 	background-attachment: fixed;
 }
 
+.card{
+	overflow-x: hidden;
+}
+.card > div{
+	margin-right: -15px;
+}
+
 .card-content > p,
 .card-content > span,
 .card-content > ul{
@@ -15,6 +22,7 @@ body{
 	font-family: "Montserrat", verdana;
 	font-weight: bold;
 	color: #232323;
+	text-decoration: underline;
 	text-shadow: 3px 2px 0px #fff, 6px 4px 0px rgba(0,0,0,0.15);
 }
 
@@ -24,13 +32,14 @@ body{
 }
 
 .page-header-description{
-	font-size: 14px;
-	font-style: italic;
-    background-color: rgba(0,0,0,0.5);
-    border-radius: 10px;
-    margin: 0 auto;
-    padding: 5px;
-    color: white;
+	font-size: 1em;
+	color: #232323;
+	font-weight: bold;
+	z-index: -1;
+	top: 80%;
+	background-color: rgba(245, 245, 245, 0.75);
+	border-radius: 5px;
+	padding: 10px 5px !important;
 }
 
 #admin-form{
@@ -112,11 +121,42 @@ header, main, footer {
 
 /* Under 992px, common modernizer mobile breakpoint */
 @media (max-width: 992px){
+	body{
+		font-size: 2em;
+	}
 	#slide-out{
 		width: 60vw;
 	}
 	#main-content-container{
 		margin-left: 5%;
 		width: 90%;
+	}
+
+	#slide-out > li{
+		padding: 15px;
+	 
+	}
+	#slide-out > li:active{
+	   border-left: 15px solid #bbdefb;	
+	}
+	#slide-out > li > a{
+		font-size: 1.5em;
+	}
+	.card{
+		padding: 15px;
+	}
+	.card .card-content .card-title{
+        font-size: 2em;
+	    text-align: center;
+	    margin-bottom: 40px !important;
+	    line-height: 1em !important;
+	}
+	#mobile-menu-icon{
+		font-size: 10rem;
+		color: #f0f0f2;
+		background-color: #232323;
+	    border-radius: 15px;
+	    margin: 15px;
+	    box-shadow: 0 0 0px 4px #f0f0f2;
 	}
 }
