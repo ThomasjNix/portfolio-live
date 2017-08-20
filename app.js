@@ -42,19 +42,8 @@ app.use(function(req,res,next){
 	next();
 });
 
-
 // Database 
 mongoose.connect('mongodb://localhost/portfolio');
-
-/*
-User.register(new User({username: "Admin"}), "P@ssw0rd1!", function(err, user){
-	if (err){
-		console.log(err);
-	}else{
-		console.log(user);
-	}
-})
-*/
 
 //RESTful routing setup
 app.use(staticRoutes);
@@ -63,9 +52,8 @@ app.use('/admin',adminRoutes);
 app.get('/*', function(req,res){
 	res.redirect("/");
 });
-
+var PORT = process.env.PORT || 8080;
 // server start
-var PORT = process.env.PORT || 4000;
 app.listen(PORT, function(){
     console.log("Server started on port "+PORT);
 });

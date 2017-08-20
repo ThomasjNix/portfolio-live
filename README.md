@@ -1,10 +1,16 @@
+<h1>Major Update!</h1>
+<p>This portfolio is now LIVE! Through Digital Ocean, Google Domains, SSH and a little magic, you can now visit this project at <a href="www.thomasjnix.com">thomasjnix.com</a>!</p>
+<hr>
+<br>
+
+
 <h1>Welcome!</h1>
 
 <p>This is a repository intended for the development process of the next stage of my portfolio, where I will be incorporating back-end development and eventually deploying it to a live server! 
 I have a few previous portfolio attemps from various points in my development experience, and the most recent before this one can be seen here: </p>
 
 <a href="https://github.com/ThomasjNix/Portfolio">Current portfolio on GitHub</a>
-<a href="http://webpages.uncc.edu/tnix2/" >Current portfolio, live via university hosting (static markup only)</a>
+<a href="http://webpages.uncc.edu/tnix2/" ><del>Current</del> Previous portfolio, live via university hosting (static markup only)</a>
 
 <h3>Why a new portfolio?</h3>
 
@@ -31,10 +37,10 @@ portfolio to broadcast my skills!</p>
     <li>
         <ul>
             <li>
-                Bootstrap (v3, possibly v4)
+                <del>Bootstrap (v3, possibly v4)</del> Semantic UI
             </li>
             <li>
-                SASS
+                SASS (<em>Update: SASS to be used in next portfolio upgrade</em>)
             </li>
         </ul>
     </li>
@@ -47,10 +53,10 @@ portfolio to broadcast my skills!</p>
                 jQuery
             </li>
             <li>
-                Grunt or Gulp
+                Grunt or Gulp  (<em>Update: Gulp to be used in next portfolio upgrade</em>)
             </li>
             <li>
-                Angular or React
+                Angular or React  (<em>Update: Angular4 to be used in next portfolio upgrade</em>)
             </li>
         </ul>
     </li>

@@ -26,9 +26,9 @@
 						<% projects.forEach(function(projectItem){ %>
 							<% if (projectItem.projectType === "1"){ %>
 							    <li class="collection-item avatar">
-							      <img src="<%= projectItem.projectImageUrl %>" alt="" class="circle">
+							      
 							      <span class="title"><%= projectItem.projectName %></span>
-							      <p><%= projectItem.projectDescription %></p>
+							      <p><%- projectItem.projectDescription %></p>
 							    </li>
 						     <% } %>
 					    <% }) %>
@@ -43,9 +43,9 @@
 						<% projects.forEach(function(projectItem){ %>
 							<% if (projectItem.projectType === "2"){ %>
 							    <li class="collection-item avatar">
-							      <img src="<%= projectItem.projectImageUrl %>" alt="" class="circle">
+							     
 							      <span class="title"><%= projectItem.projectName %></span>
-							      <p><%= projectItem.projectDescription %></p>
+							      <p><%- projectItem.projectDescription %></p>
 							    </li>
 						     <% } %>
 					    <% }) %>
