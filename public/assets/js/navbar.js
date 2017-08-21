@@ -9,7 +9,9 @@ $('#mobile-menu-icon').on('click', function(){
 	$('#main-content-container').css('filter','blur(5px)');
 
 });
-$('body > div.drag-target').on('click', function(){
+
+/* Add blur to background page when nav opens on mobile */
+$('body > div.drag-target').on('click touch', function(){
 	$('body > div.drag-target').css('display','none');
 	$('#main-content-container').css('filter','none');
 });
