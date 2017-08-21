@@ -4,7 +4,7 @@
 }
 .collection-item p{
 	max-width: 100%;
-    word-break: break-all;
+	word-break: break-word;
 }
 
 input[type="radio"]{
@@ -19,11 +19,14 @@ input[type="radio"]{
 		font-size: 1rem;
 	}
 	.collection .collection-item.avatar .title{
-		font-size: 1.2em !important;
+		font-size: 1.2rem !important;
 	}
 	.card-content > div > ul > li{
 		font-size: 1em;
 		line-height: 1.2em !important;
+	}
+	.collection-item p{
+		font-size: 1.0rem;
 	}
 	.collection .collection-item{
 		padding: 30px 20px;
