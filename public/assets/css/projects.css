@@ -1,16 +1,24 @@
-.card .card-content{
-	max-height: 50vh;
-	overflow-y: scroll;
+#add-buttons > div:nth-child(1){
+	text-align: right;
 }
 
-input[type="radio"]{
-	margin-left: 15px;
-	margin-top: 5px;
+.button-content{
+	position: absolute;
+	right: 10%;
+	top: 25%;
+}
+
+li.collection-item > p,
+li.collection-item > span{
+    max-width: 66.67%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 @media (max-width: 992px){
 	#main-content-container > div> div > div > div.card-tabs > ul > li> a{
-		font-size: 1em;
+		font-size: 1rem;
 	}
 	.collection .collection-item.avatar .title{
 		font-size: 1.2em !important;
@@ -21,5 +29,17 @@ input[type="radio"]{
 	}
 	.collection .collection-item{
 		padding: 30px 20px;
+	}
+	.row.button-content > a,
+	.row.button-content > form > button,
+	#add-buttons > div > a{
+		font-size: 0.75rem;
+	}
+	.btn i, .btn-large i, .btn-floating i, .btn-large i, .btn-flat i{
+		font-size: 1.3em !important;
+	}
+	li.collection-item > p,
+	li.collection-item > span{
+		max-width: 50%;
 	}
 }

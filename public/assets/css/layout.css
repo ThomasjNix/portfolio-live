@@ -1,6 +1,7 @@
+
 body{
 	color: #001011;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', verdana !important;
 	background-image: url('/assets/images/bg-img-test.png');
 	background-size: cover;
 	background-attachment: fixed;
@@ -24,12 +25,10 @@ body{
 }
 .flash-message{
     margin-left: 15%;
-    font-family: Roboto, verdana;
     font-size: 1.2em;
     opacity: 0.8;
 }
 .page-header{
-	font-family: "Montserrat", verdana;
 	font-weight: bold;
 	color: #232323;
 	text-decoration: underline;
@@ -103,8 +102,7 @@ header, main, footer {
 	margin-left: 1px;
 }
 #slide-out li.active{
-	border-left: 5px solid #bbdefb;
-	background-color: #1976d2;
+	border-left: 7px solid #f0f0f2;
 }
 #slide-out li.active a{
 	color: white;
@@ -140,6 +138,9 @@ header, main, footer {
 	}
 	#slide-out{
 		width: 60vw;
+		overflow-y: hidden;
+		overflow-x: hidden;
+		padding-right: 15px;
 	}
 	#main-content-container{
 		margin-left: 5%;
@@ -147,30 +148,52 @@ header, main, footer {
 	}
 
 	#slide-out > li{
-		padding: 15px;
-	 
+		padding: 10px;
 	}
 	#slide-out > li:active{
 	   border-left: 15px solid #bbdefb;	
 	}
 	#slide-out > li > a{
-		font-size: 1.5em;
+		font-size: 1.25rem;
 	}
 	.card{
 		padding: 15px;
 	}
 	.card .card-content .card-title{
-        font-size: 2em;
-	    text-align: center;
-	    margin-bottom: 40px !important;
-	    line-height: 1em !important;
-	}
+        font-size: 1.5em;
+        text-align: center;
+        margin-bottom: 20px !important;
+        line-height: 1em !important;
+ }
 	#mobile-menu-icon{
-		font-size: 10rem;
+		font-size: 5rem;
 		color: #f0f0f2;
 		background-color: #232323;
-	    border-radius: 15px;
-	    margin: 15px;
-	    box-shadow: 0 0 0px 4px #f0f0f2;
+		border-radius: 15px;
+		margin: 15px;
+		box-shadow: 0 0 0px 4px #f0f0f2;
 	}
+	.page-header{
+		font-size: 2.5rem;
+	}
+	.page-header-description{
+		font-size: 1.5rem;
+	}
+	.card-content > p, .card-content > span, .card-content > ul,
+	.card .card-action{
+		font-size: 1.1rem;
+	}
+	div.card .card-image img{
+		top: 50px;
+		padding: 5px
+	}
+	.flash-message{
+		
+margin-left: 0;
+		
+font-size: 1.2rem;
+		
+text-align: center;
+	}
+	
 }
