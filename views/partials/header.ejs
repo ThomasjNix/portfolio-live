@@ -5,18 +5,14 @@
       <title>Thomas Nix</title>
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
       <link rel="stylesheet" type="text/css" href="/assets/css/layout.css">
-      <script
-        src="https://code.jquery.com/jquery-3.1.1.min.js"
-        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-        crossorigin="anonymous">
-      </script>
+      
       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
       <!-- Compiled and minified CSS -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
 
       <!-- Compiled and minified JavaScript -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+      
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body>
@@ -29,12 +25,7 @@
       <li><a href="/contact">Contact</a></li>
       <li><a href="/skills">Skills</a></li>
       <li><a href="/projects">Projects</a></li>
-      <% if (!user){ %>
-        <li><a href="/admin/login">Admin Login</a></li>
-      <% }else{ %>
-        <li><a href="/admin">Admin Controls</a></li>
-        <li><a href="/admin/logout">Admin Logout</a></li>
-      <% } %>
+    
     </ul>
 
     <div class="flash-message red"><%= error %></div>

@@ -1,17 +1,24 @@
-(function(location){
-	$('#slide-out a[href="/'+location).parent().addClass('active');
-})(window.location.pathname.substr(1));
+/* Common use declarations */
+var pathNameSub = window.location.pathname.substr(1),
+	mobileMenuIcon = $('#mobile-menu-icon'),
+	mainContentContainer = $('#main-content-container'),
+	slideOutMenu = $('#slide-out');
 
-$(".button-collapse").sideNav();
+/* Add active class to side menu tab based on page location*/
+$('#slide-out li a[href="/'+pathNameSub+'"]').parent().addClass('active');
 
-$('#mobile-menu-icon').on('click', function(){
-	$('body > div.drag-target').css('display','initial');
-	$('#main-content-container').css('filter','blur(5px)');
+
+/* Add blur to background page when side menu is opened on mobile */
+mobileMenuIcon.on('click touch', function(){
+	mainContentContainer.css('filter','blur(5px)');
+	$('#sidenav-overlay').css('display','none');
 
 });
 
-/* Add blur to background page when nav opens on mobile */
-$('body > div.drag-target').on('click touch', function(){
-	$('body > div.drag-target').css('display','none');
-	$('#main-content-container').css('filter','none');
+/* Remove background blur if client touches/clicks outside of side menu */
+$('body').on('click touch', function(e){
+	if (e.clientX > slideOutMenu.width()){
+		$('body > div.drag-target').css('display','none');
+		mainContentContainer.css('filter','none');	
+	}	
 });
